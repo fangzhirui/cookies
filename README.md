@@ -1,4 +1,4 @@
-# 	高性能javascript High Performance Javascript
+# 	高性能javascript / High Performance Javascript
 
 -------
 
