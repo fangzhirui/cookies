@@ -23,5 +23,6 @@
 4.  open chrome 
 
       ```
-      http://localhost:8080/?ws=127.0.0.1:8080&port=5858 //node server is running on 8080
+      http://localhost:8080/debug?port=5858 //normal
+      http://localhost:8080/?ws=127.0.0.1:8080&port=5858 //with parameter
       ```
