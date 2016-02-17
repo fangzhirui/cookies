@@ -2,7 +2,9 @@
 
 1.  install node-inspector
 
-      ```npm install -g node-inspector```
+      ```
+      npm install -g node-inspector
+      ```
 
 2.  open a cmd console 
 
