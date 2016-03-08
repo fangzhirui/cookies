@@ -301,7 +301,6 @@
 		}
 
 	场景：比如无需返回用户数据的用户authentication就可以用这种。  记录用户在线时长的，传送id及时长即可，可以用这个。  
-
 	如果没用东西返回的话，服务器应该返回http 204　no content 用来阻止客户端继续等待。
 
 5.	AJAX缓存 (存疑)
@@ -316,7 +315,8 @@
 
 1.	不使用eval。 使用setTimeout的时候第一个参数不是字符串。
 2.	“条件预加载”
-		
+	
+	
 		var addHandler = document.body.addEventListener?
 			function(target, eventType, handler){
 				target.addEventListener(eventType, handler, false);
