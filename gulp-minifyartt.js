@@ -3,8 +3,12 @@ var through2 = require('through2');
 var rr = function(str){
   var regex = [];
   regex.push({
-    reg:/>[\s\t\n]+</g,
-    rep:'><'}
+    reg:/>[\s\t\n]+/g,
+    rep:'>'}
+  );
+  regex.push({
+    reg:/[\s\t\n]+</g,
+    rep:'<'}
   );
   regex.push({
     reg: /\}\}[\s\t\n]+</g,
@@ -26,6 +30,11 @@ var rr = function(str){
     reg: /\'/g,
     rep: '"'
   });
+  regex.push({
+    reg: /"\s/g,
+    rep: '"'
+  });
+
   var str2 = str;
   for(var i=0, len=regex.length;i<len;i++){
     str2 = str2.replace(regex[i].reg, regex[i].rep);
