@@ -1,3 +1,22 @@
+//Minify html templates. Special for arttemplate html.
+/*
+  var minifyArtt = require('./lib/gulp-minifyartt');
+  
+  ...
+  
+  gulp.task('minifyTpl', function(){
+    for(var attr in filenames){
+      gulp.src(filenames[attr])
+        .pipe(minifyArtt())
+        .pipe(rename({
+          suffix: '.min'
+        }))
+        .pipe(gulp.dest(distPrefix + '/tpl'));
+    }
+  });
+  
+*/
+
 var through2 = require('through2');
 
 var rr = function(str){
