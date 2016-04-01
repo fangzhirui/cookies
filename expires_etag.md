@@ -3,10 +3,12 @@
 ####  Expires/Cache-Control
 
 - Expires属于HTTP 1.0, 在响应头中, 在五一之前缓存有效
+
     ```
       Expires:Sun, 01 May 2016 08:15:14 GMT
     ```
 - Cache-Control属于HTTP 1.1, 在响应头中, 未来3x多秒内缓存有效
+
     ```
       Cache-Control: max-age=315360000
     ```
@@ -14,6 +16,7 @@
 
 ####  Last-Modified / If-Modified-Since
 - Last-Modified是响应头, If-Modified-Since是请求头. 浏览器收到Last-Modified, 在下次请求相同链接时把该值设置到If-Modified-Since中, 服务器可以返回304直接采用浏览器缓存.
+  
   ```
   Last-Modified:Mon, 10 Aug 2015 07:24:08 GMT
   If-Modified-Since:Wed, 22 Jun 2011 06:40:43 GMT
@@ -21,6 +24,7 @@
 
 ####  ETag / If-None-Match
 - ETag是响应头, If-None-Match是请求头, 与上条同理.
+  
   ```
   ETag: "158cf5f8b-d87-51cefdf11fc35"
   If-None-Match:"158cf5f8b-d87-51cefdf11fc35"
