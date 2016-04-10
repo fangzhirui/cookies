@@ -1,0 +1,51 @@
+<!-- reference http://miromannino.github.io/Justified-Gallery/ -->
+<html>
+    <head>
+    <script   src="https://code.jquery.com/jquery-1.12.3.js"   integrity="sha256-1XMpEtA4eKXNNpXcJ1pmMPs8JV+nwLdEqwiJeCQEkyc="   crossorigin="anonymous"></script>
+    <style>
+        .loadingBall {
+          position: absolute;
+          padding: 10px 0 10px 0;
+          left: 50%;
+          opacity: initial;
+          filter: initial;
+          overflow: initial;
+        }
+        .loadingBall > span {
+          display: inline-block;
+          opacity: 1;
+          filter: alpha(opacity=0);
+          /* IE8 or Earlier */
+          width: 8px;
+          height: 8px;
+          margin: 0 4px 0 4px;
+          background-color: #2196f3;
+          border-top-left-radius: 6px;
+          border-top-right-radius: 6px;
+          border-bottom-right-radius: 6px;
+          border-bottom-left-radius: 6px;
+        }
+    </style>
+
+    </head>
+    
+    <body>
+        <div class="loadingBall"><span></span><span></span><span></span></div>
+    </body>
+    <script>
+        spinnerContext = {
+            phase: 0,
+            timeSlot: 150
+        }
+    
+        $spinnerPoints = $('.loadingBall > span');
+        spinnerContext.intervalId = setInterval(function () {
+          if (spinnerContext.phase < $spinnerPoints.length) {
+            $spinnerPoints.eq(spinnerContext.phase).fadeTo(spinnerContext.timeSlot, 1);
+          } else {
+            $spinnerPoints.eq(spinnerContext.phase - $spinnerPoints.length).fadeTo(spinnerContext.timeSlot, 0);
+          }
+          spinnerContext.phase = (spinnerContext.phase + 1) % ($spinnerPoints.length * 2);
+        }, spinnerContext.timeSlot);
+    </script>
+</html>
